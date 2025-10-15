@@ -1,9 +1,0 @@
-Cedula;Nº de Factura;Cliente;Fecha;Subtotal;Descuento;IVA;Precio total;Plan;Forma de pago
-0706146842;0001;Zambrano Pineda Freddy Daniel;01-02-2021;20.0;2.0;2.4;20.4;Premium ;Tarjeta
-0703003665;0002;Zambrano Zambrano Freddy Enrique;10-09-2021;20.0;3.0;2.4;19.4;Premium ;Transferencia
-0702283326;0003;Pineda Ordoñez Fanny María;10-09-2021;20.0;3.0;2.4;19.4;Premium ;Efectivo
-0701111111;0004;Tilin Tilin;10-09-2021;15.0;2.0;1.7999999999999998;14.8;Medio ;Tarjeta
-0702283326;0003;Ordoñez Pineda Pineda Ordoñez;10-09-2021;15.0;2.0;1.7999999999999998;14.8;Medio ;Tarjeta
-0702283326;0005;Ordoñez Pineda Pineda Ordoñez;10-09-2021;10.0;2.0;1.2;9.2;Basico ;Tarjeta
-0702283326;0006;Pineda Ordoñez Fanny Maria;11-09-2021;15.0;2.0;1.7999999999999998;14.8;Medio ;Tarjeta
-0706146842;0004;Zambrano Pineda Freddy Daniel;10-09-2021;15.0;2.0;1.7999999999999998;14.8;Medio ;Tarjeta
