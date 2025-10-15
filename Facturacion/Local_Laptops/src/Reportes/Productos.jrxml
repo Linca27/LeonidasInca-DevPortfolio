@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Productos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45d8ea27-3e9d-477f-8dd5-6c06f7508644">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     lenovo.`CodigoLenovo` AS lenovo_CodigoLenovo,
+     lenovo.`Nombre` AS lenovo_Nombre,
+     lenovo.`Memoria` AS lenovo_Memoria,
+     lenovo.`Procesador` AS lenovo_Procesador,
+     lenovo.`Tipo` AS lenovo_Tipo,
+     lenovo.`Capacidad` AS lenovo_Capacidad,
+     lenovo.`Pantalla` AS lenovo_Pantalla,
+     lenovo.`Windows` AS lenovo_Windows,
+     lenovo.`Garantia` AS lenovo_Garantia,
+     lenovo.`PrecioEfectivo` AS lenovo_PrecioEfectivo,
+     lenovo.`PrecioTarjeta` AS lenovo_PrecioTarjeta
+FROM
+     `lenovo` lenovo]]>
+	</queryString>
+	<field name="lenovo_CodigoLenovo" class="java.lang.Integer"/>
+	<field name="lenovo_Nombre" class="java.lang.String"/>
+	<field name="lenovo_Memoria" class="java.lang.String"/>
+	<field name="lenovo_Procesador" class="java.lang.String"/>
+	<field name="lenovo_Tipo" class="java.lang.String"/>
+	<field name="lenovo_Capacidad" class="java.lang.String"/>
+	<field name="lenovo_Pantalla" class="java.lang.String"/>
+	<field name="lenovo_Windows" class="java.lang.Integer"/>
+	<field name="lenovo_Garantia" class="java.lang.String"/>
+	<field name="lenovo_PrecioEfectivo" class="java.lang.Integer"/>
+	<field name="lenovo_PrecioTarjeta" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="175" y="17" width="226" height="36" uuid="00e7b623-50e2-4e1a-9b68-0f346b8b14fb"/>
+				<textElement textAlignment="Justified">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte Productos]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="472" y="0" width="100" height="20" uuid="18d9b1cb-1661-48ca-9433-9af854060a5f"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="20" uuid="a0f0adb4-91a5-468a-9b03-9b73ab2ddbc5"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="0" width="57" height="20" uuid="55ef3890-d6ab-43b4-ae24-ca856f548698"/>
+				<text><![CDATA[lenovo_Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="65" height="20" uuid="62a808bf-093d-4157-978e-42649633686f"/>
+				<text><![CDATA[lenovo_Memoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="0" width="67" height="20" uuid="5951cf36-beff-4022-92ff-2df9cfeb7af4"/>
+				<text><![CDATA[lenovo_Procesador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="0" width="63" height="20" uuid="0fdf9536-9184-42fe-bba1-48ab1925b8a0"/>
+				<text><![CDATA[lenovo_Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="0" width="58" height="20" uuid="32161035-3a2c-4d54-8921-e2720d1dbcd7"/>
+				<text><![CDATA[lenovo_Capacidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="0" width="61" height="20" uuid="932ee8c0-94d6-47a6-9972-4b7c4314135d"/>
+				<text><![CDATA[lenovo_Pantalla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="2" width="64" height="20" uuid="4e93626a-80a0-41ce-b133-2c1b4ea8aa36"/>
+				<text><![CDATA[lenovo_PrecioEfectivo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="2" width="84" height="20" uuid="290f2a0f-6840-45d0-b83d-6a63402a648d"/>
+				<text><![CDATA[lenovo_PrecioTarjeta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="50" height="20" uuid="1e4989b4-4096-4d49-bdc1-fc28b58474fe"/>
+				<textFieldExpression><![CDATA[$F{lenovo_CodigoLenovo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="0" width="53" height="20" uuid="ca0a2268-dbbf-4266-97e1-557e1416d0ab"/>
+				<textFieldExpression><![CDATA[$F{lenovo_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="0" width="68" height="20" uuid="b2399ee0-7861-49b2-951d-2d525a154aa4"/>
+				<textFieldExpression><![CDATA[$F{lenovo_Memoria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="0" width="64" height="20" uuid="8bdd05d7-5cd4-49f0-afd7-8c0f7c39759e"/>
+				<textFieldExpression><![CDATA[$F{lenovo_Procesador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="0" width="63" height="20" uuid="b92a9f5a-14bf-4562-9a60-3af0ed5a8f66"/>
+				<textFieldExpression><![CDATA[$F{lenovo_Tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="0" width="58" height="20" uuid="8a5a5c16-ad6d-43a9-bc16-5bdc5ce1ea35"/>
+				<textFieldExpression><![CDATA[$F{lenovo_Capacidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="0" width="61" height="20" uuid="35b2fb13-f63b-4c66-ad0a-d70d327d25f4"/>
+				<textFieldExpression><![CDATA[$F{lenovo_Pantalla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="0" width="64" height="20" uuid="2d047916-5a93-4fc8-bd5e-8519fde9ca0f"/>
+				<textFieldExpression><![CDATA[$F{lenovo_PrecioEfectivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="0" width="84" height="20" uuid="81492d27-d716-4612-9d10-5047c407cb14"/>
+				<textFieldExpression><![CDATA[$F{lenovo_PrecioTarjeta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="242" y="0" width="100" height="20" uuid="9302b63d-008d-4325-a1eb-08c3dbcee5cf"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

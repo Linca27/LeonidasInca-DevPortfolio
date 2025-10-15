@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Facturas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e0271de-ff23-447a-8149-8258daa7bbac">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     factura_clientef.`idFactura_ClienteF` AS factura_clientef_idFactura_ClienteF,
+     factura_clientef.`Cedula` AS factura_clientef_Cedula,
+     factura_clientef.`Nombre` AS factura_clientef_Nombre,
+     factura_clientef.`N°_Celular` AS factura_clientef_N°_Celular,
+     factura_clientef.`Dirección` AS factura_clientef_Dirección,
+     factura_clientef.`Fecha` AS factura_clientef_Fecha,
+     factura_clientef.`TPago` AS factura_clientef_TPago,
+     factura_clientef.`Producto` AS factura_clientef_Producto,
+     factura_clientef.`Totalpago` AS factura_clientef_Totalpago
+FROM
+     `factura_clientef` factura_clientef]]>
+	</queryString>
+	<field name="factura_clientef_idFactura_ClienteF" class="java.lang.Integer"/>
+	<field name="factura_clientef_Cedula" class="java.lang.Integer"/>
+	<field name="factura_clientef_Nombre" class="java.lang.String"/>
+	<field name="factura_clientef_N°_Celular" class="java.lang.Integer"/>
+	<field name="factura_clientef_Dirección" class="java.lang.String"/>
+	<field name="factura_clientef_Fecha" class="java.lang.String"/>
+	<field name="factura_clientef_TPago" class="java.lang.String"/>
+	<field name="factura_clientef_Producto" class="java.lang.String"/>
+	<field name="factura_clientef_Totalpago" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="153" y="0" width="308" height="66" uuid="d7a4caa0-dc3e-40cd-bf51-2b91593515a2"/>
+				<textElement>
+					<font fontName="Comic Sans MS" size="36"/>
+				</textElement>
+				<text><![CDATA[Reporte Facturas]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="472" y="13" width="100" height="20" uuid="c78076cd-36b4-424f-9715-f588bb85eacf"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-10" y="-7" width="201" height="20" uuid="5bc0a63c-81c4-4738-9a2d-aa9db7d6b750"/>
+				<text><![CDATA[Programa elaborado por Dumes e Inca]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="2" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="2" width="76" height="20" uuid="3c377201-8eb1-4bc8-9d4f-fb7ca120819b"/>
+				<text><![CDATA[Id Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="2" width="68" height="20" uuid="9c84c20c-1d5b-4e88-998e-a128909a48b1"/>
+				<text><![CDATA[Cedula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="2" width="72" height="20" uuid="51df2776-f567-475b-94a9-8d387a754043"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="2" width="69" height="20" uuid="288131dc-63f3-4328-a87b-9bf90e7660c5"/>
+				<text><![CDATA[Celular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="2" width="59" height="20" uuid="d5b14f8a-bac7-41ed-b3ed-eb0b0becdc75"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="2" width="73" height="20" uuid="21168558-cb60-4ad3-a29e-54ecd6aea6d9"/>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="2" width="73" height="20" uuid="8039222c-df3b-495e-b8fd-a3714884e071"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="2" width="81" height="20" uuid="1be9f06e-1590-4cb7-89d5-45391bc31a1d"/>
+				<text><![CDATA[Total a pagar]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="76" height="20" uuid="f7bc2daf-8cc2-46a5-a0c3-4b9cd49bc2da"/>
+				<textFieldExpression><![CDATA[$F{factura_clientef_idFactura_ClienteF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="0" width="76" height="20" uuid="17dfc276-1487-404e-b1ae-3312de8bfa5c"/>
+				<textFieldExpression><![CDATA[$F{factura_clientef_Cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="0" width="64" height="20" uuid="2558a190-3b2b-4c10-b9e0-a86fb3d8224b"/>
+				<textFieldExpression><![CDATA[$F{factura_clientef_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="217" y="0" width="69" height="20" uuid="a3ed93cf-5e40-42bd-9878-c28be98fef1f"/>
+				<textFieldExpression><![CDATA[$F{factura_clientef_N°_Celular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="0" width="59" height="20" uuid="00262f69-2a5d-45cd-b443-910d5d818daf"/>
+				<textFieldExpression><![CDATA[$F{factura_clientef_Fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="0" width="73" height="20" uuid="ff6686d1-cc60-4f7e-9ff9-b3e488441f3d"/>
+				<textFieldExpression><![CDATA[$F{factura_clientef_TPago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="0" width="73" height="20" uuid="a7118f9d-6b2b-4dbb-a942-dafe2219badd"/>
+				<textFieldExpression><![CDATA[$F{factura_clientef_TPago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="0" width="81" height="20" uuid="1c92b03d-7e12-4c26-bad1-2784f4113fb4"/>
+				<textFieldExpression><![CDATA[$F{factura_clientef_Totalpago}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="2" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="245" y="0" width="100" height="20" uuid="e5642182-57aa-4f4b-92c2-92ed88f2d54b"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
